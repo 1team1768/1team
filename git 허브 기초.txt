@@ -1,0 +1,74 @@
+깃허브 story .. /
+
+(명령어 =  >> 이걸로 표시)
+
+step 1. git 다운받기 
+네이버에 쳐서 git 다운받고 git bash 실행 ! 
+
+유저 이름 설정하기
+>> git config --global user.name "이름 알아서 작성"
+
+유저 이메일 설정하기
+>> git config --global user.email "이메일 작성"
+
+정보 확인 
+
+>> git config --list 
+/ 들어가서 user.name , email 설정한 대로 나온다면 성공 ! 
+
+step 2 . 깃허브 
+
+git hub 에서 프로젝트 만들고 
+
+git 업로드 하려는 파일 들어가서 오른쪽 마우스 클릭 / git bash 선택
+
+step 2-1. 업로드 파일중 100mb 이상 파일 존재한다면 ? 
+
+네이버에 lfs 검색 후 설치 한 후 / 
+
+>>  git lfs install 실행
+>> git lfs track 업로드파일명.exe 이런식 실행
+>> git add .gitattributes 
+
+여기서 부터는 일반 github 업로드와 동일
+
+>> git init
+>> git add . (add . / 모든파일 업로드) 
+
+* ( 만약 
+warning: LF will be replaced by CRLF in 오류가 뜬다면 ?
+
+>> git config --global core.autocrlf true 
+
+다시 git add . 실행 오류해결 ~! )
+
+>> git commit -m "설정할 이름"
+(git 허브 속 폴더명? 같은 느낌이라 생각)
+실행하면 add 가 된 파일들이 쭈욱 정렬이 됨 이러면 성공 ! 
+
+>> git remote add origin 깃 허브 주소 
+(https://github.com/kwon981016/LV1.git 이런식으로 되어 있음)
+/깃 허브 프로젝트 만들면 거기 초기화면에 작성되어 있는거 가져오면 된다.
+
+>> git remote -v
+연결한 주소가 잘 뜨면 성공 (보통 2개 뜬다 저 위에 설정한 주소로)
+
+>> git push origin master 하면 완료!! 
+
+일딴 이렇게해서 나는 겨우겨우 깃허브에 올리길 성공했다,,, 화이팅 !
+
+
++추가 
+
+git hub 같은 프로젝트에 포폴을 추가하고 싶어용 ㅠㅠ
+
+>> git add . 해주고
+>> git commit -m "이름설정" 해주고
+>> git push origin master 만 해주면 업로드 완료 
+
+이 3개만 반복하면 계속해서 같은 프로젝트 안에 업로드가 가능하다
+
++추가 22 
+
+업로드 하려는 포폴이 만약100mb 이상이라면?? 
+위에 적어둔 lfs 순서 그대로 써 준 다음에 바로 >> git add . 부터 시작하면 된다.
